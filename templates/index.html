@@ -10,11 +10,17 @@
 </head>
 
 <body>
-  <h1>HEY<h1>
-  <p class="content">
-    <span class="typewrite anim-typewrite js-typewrite"></span>
-  </p>
-  <script src="static/loading_animation.js"></script>
+  <h1>ROBIN VS WESSEL VS JORDI VS CANER<h1>
+  <h2>WIE GAINED DE MEESTE GAINS?</h2>
+  <div class="players">
+    {% for player in players %}
+    <div class="player">
+      <h3>{{ player.name }}</h3>
+      <p>{{ player.total_level }}</p>
+      <p>{{ player.total_xp }}</p>
+    </div>
+    {% endfor %}
 </body>
 
-</html>
+  
+  
