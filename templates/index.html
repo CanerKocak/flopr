@@ -3,23 +3,45 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <title>FLOPRR</title>
 </head>
 
 <body>
-  <h1>ROBIN VS WESSEL VS JORDI VS CANER<h1>
-  <h2>WIE GAINED DE MEESTE GAINS?</h2>
-  <div class="players">
-    {% for player in players %}
-    <div class="player">
-      <h3>{{ player.name }}</h3>
-      <p>{{ player.total_level }}</p>
-      <p>{{ player.total_xp }}</p>
-    </div>
-    {% endfor %}
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Players</title>
+  </head>
+  <body>
+      <table>
+          <tr>
+              <th>Player</th>
+              <th>NPC</th>
+              <th>Timestamp</th>
+              <th>Price</th>
+              <th>Items</th>
+          </tr>
+          {% for player in players %}
+              {% for npc in players[player] %}
+                  {% for kill in players[player][npc] %}
+                      <tr>
+                          <td>{{ player }}</td>
+                          <td>{{ npc }}</td>
+                          <td>{{ kill['timestamp'] }}</td>
+                          <td>{{ kill['price'] }}</td>
+                          <td>
+                              {% for item in kill['items'] %}
+                                  <img src="https://everythingrs.com/img/gameitem/{{ item['id'] }}.png" alt="{{ item['id'] }}" title="{{ item['quantity'] }}" width="32" height="32">
+                              {% endfor %}
+                          </td>
+                      </tr>
+                  {% endfor %}
+              {% endfor %}
+          {% endfor %}
+      </table>
+  </body>
+  </html>
 </body>
 
   
