@@ -33,7 +33,7 @@ def inventory_items(player):
 def equipped_items(player):
     return '', 200
 
-@app.route('/<player>/npc_kill/', methods=['POST'])
+@app.route('/<player>/npc_kill/', methods=['POST', 'GET'])	
 def npc_kill(player):
     data = request.json
     timestamp = data['timestamp']
