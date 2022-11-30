@@ -36,6 +36,7 @@ def equipped_items(player):
 @app.route('/<player>/npc_kill/', methods=['POST', 'GET'])	
 def npc_kill(player):
     data = request.json
+    print(data)
     timestamp = data['timestamp']
     data = data['data']
     price =  data['gePrice']
