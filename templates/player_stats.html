@@ -17,24 +17,8 @@
         <div class="card">
             <h5 class="card-title">{{ player }}</h5>
             <p>basic stats</p>
-            <ul>
-                <li>total level: {{ total }}</li>
-                <li>total xp: {{ xp }}</li>
-                <li>lowest skill: {{ lowest }}</li>
-            </ul>
-            <table>
-                <tr>
-                    <th>skill</th>
-                    <th>level</th>
-                    <th>experience</th>
-                </tr>
-                {% for skill in player['skills'] %}
-                <tr>
-                    <td>{{ skill['name'] }}</td>
-                    <td>{{ skill['level'] }}</td>
-                    <td>{{ skill['experience'] }}</td>
-                </tr>
-                {% endfor %}
+            <p>total level: {{ total }}</p>
+              <p></p>total xp: {{ xp }}</p>
     </main>
 </body>
 </html>
