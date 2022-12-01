@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>FLOPRR</title>
+  </head>
+  <body>
+    <header>
+        <h1>GROUP IRONMAN STATS</h1>
+    </header>
+    <main>
+        <div class="card">
+            <h5 class="card-title">{{ player }}</h5>
+            <p>basic stats</p>
+            <ul>
+                <li>total level: {{ total }}</li>
+                <li>total xp: {{ xp }}</li>
+                <li>lowest skill: {{ lowest }}</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>skill</th>
+                    <th>level</th>
+                    <th>experience</th>
+                </tr>
+                {% for skill in player['skills'] %}
+                <tr>
+                    <td>{{ skill['name'] }}</td>
+                    <td>{{ skill['level'] }}</td>
+                    <td>{{ skill['experience'] }}</td>
+                </tr>
+                {% endfor %}
+    </main>
+</body>
+</html>

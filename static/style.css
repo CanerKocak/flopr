@@ -3,7 +3,6 @@
 
 html {
   min-height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -24,37 +23,150 @@ body {
     width: -webkit-calc(70%);
 }
 
-.typewrite {
-  font-size: 180%;
-  border-right: 2px solid rgba(255,255,255,.75);
-  line-height: 1.15;
+.kill {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
 }
 
-.anim-typewrite {
-  animation: blinkTextCursor 500ms infinite normal;
+.kill:hover {
+    background-color: rgba(255,255,255,.75);
+    color: rgb(25,25,25);
 }
 
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
+.items {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
 }
 
-@media screen and (max-width: 700px) {
-  .typewrite {
-    font-size: 100%;
+.container {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.row {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.col-md-4 {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+}
+.card {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+    color: rgba(255,255,255,.75);
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card-body {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card-title {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 5%;
   }
+  
+  
+  
+
+.card-title:hover {
+    background-color: rgba(255,255,255,.75);
+    color: rgb(25,25,25);
 }
 
-/* sometimes the text goes off the screen to prevent this */
-@media screen and (max-width: 500px) {
-  .typewrite {
-    font-size: 80%;
-  }
+.card-text {
+    background-color: rgb(25,25,25);
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 5px;
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    font-family: 'Anonymous Pro', sans-serif;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
 }
 
-/* also make sure every text is centered no matter how long the sentence is */
-@media screen and (max-width: 400px) {
-  .typewrite {
-    font-size: 60%;
-  }
+.card-text:hover {
+    background-color: rgba(255,255,255,.75);
+    color: rgb(25,25,25);
 }
+

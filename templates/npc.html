@@ -1,0 +1,25 @@
+<head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>FLOPRR</title>
+</head>
+<h1> drops from: {{npc_name}} </h1>
+{% for kill in kills %}
+<div class="kill">
+    <h5>time: {{ kill["timestamp"] }}</h5>
+    <div class="items">
+        <p>items:</p>
+        <ul>
+            {% for item in kill['items'] %}
+                <img src="https://everythingrs.com/img/gameitem/{{ item['id'] }}.png" alt="{{ item['quantity'] }}" title="{{ item['quantity'] }}" width="32" height="32">
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+    
+{% endfor %}
+

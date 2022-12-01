@@ -1,48 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-  <title>FLOPRR</title>
-</head>
-
-<body>
-  <!DOCTYPE html>
-  <html>
   <head>
-      <title>Players</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>FLOPRR</title>
   </head>
   <body>
-      <table>
-          <tr>
-              <th>Player</th>
-              <th>NPC</th>
-              <th>Timestamp</th>
-              <th>Price</th>
-              <th>Items</th>
-          </tr>
-          {% for player in players %}
-              {% for npc in players[player] %}
-                  {% for kill in players[player][npc] %}
-                      <tr>
-                          <td>{{ player }}</td>
-                          <td>{{ npc }}</td>
-                          <td>{{ kill['timestamp'] }}</td>
-                          <td>{{ kill['price'] }}</td>
-                          <td>
-                              {% for item in kill['items'] %}
-                                  <img src="https://everythingrs.com/img/gameitem/{{ item['id'] }}.png" alt="{{ item['id'] }}" title="{{ item['quantity'] }}" width="32" height="32">
-                              {% endfor %}
-                          </td>
-                      </tr>
-                  {% endfor %}
-              {% endfor %}
-          {% endfor %}
-      </table>
-  </body>
-  </html>
+    <header>
+        <h1>GROUP IRONMAN STATS</h1>
+    </header>
+    <main>
+        {% for player in players %}
+            <div class="card">
+                <a href="{{ url_for('player_stats', player=player) }}"><h5 class="card-title">{{ player }}</h5></a>
+                    <ul>
+                        {% for npc in players[player] %}
+                        <a href={{ url_for('npc_kill_get', player=player, npc=npc) }}
+                            <li>{{ npc }}</li>
+                        </a>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
+        {% endfor %}
+    </main>
 </body>
-
-  
-  
+</html>
